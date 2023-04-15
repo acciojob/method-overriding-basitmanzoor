@@ -1,10 +1,36 @@
-package com.driver;
 
-public class Main {
-  public static void main(String[] args) {
-    ClassB cb = new ClassB();
+import java.io.*;
+import java.lang.*;
+import java.util.*;
 
-        String str = cb.meth(); //calling method of class A with class B object
-        System.out.println(str);
-  }
+
+
+
+
+public class Main
+{
+
+    public static class A
+    {
+
+        public String meth ()
+        {
+            return "Invoking method from class A";
+        }
+
+    }
+
+    public static class B extends A {
+
+        public String meth ()
+        {
+            return "Method is overridden in Extendend class B";
+        }
+
+
+    }
+    public static void main (String[]args)
+    {
+        System.out.println (new B().meth ());
+    }
 }
